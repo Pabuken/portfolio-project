@@ -40,6 +40,7 @@ html::-webkit-scrollbar {
 
 body {
     background-color: var(--grayBG);
+    transition: all 500ms ease-out;
 }
 
 main {
@@ -77,6 +78,10 @@ h1 {
     font-size: 6rem;
 }
 
+h2 {
+    font-size: 4.5rem;
+}
+
 h3 {
     font-size: 3rem;
 }
@@ -86,6 +91,7 @@ p {
     font-size: 1rem;
     font-weight: 500;
     line-height: 1.4rem;
+    color: var(--whitetext);
 }
 
 a {
@@ -244,7 +250,49 @@ nav {
 }
 
 
-/* -------------------------- Hero Section -------------------------- */
+
+/* -------------------------- Introduction Section -------------------------- */
+
+#intro {
+    display: flex;
+    padding: 2rem 10rem;
+    height: 30vh;
+    --w: 100vw;
+    width: var(--w);
+}
+
+.intro-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 4rem;
+    height: 100%;
+}
+
+#bestAt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    row-gap: .5rem;
+    width: 30%;
+    height: 100%;
+}
+
+#bestAt h2 {
+    white-space: nowrap;
+    --minFont: 60px;
+    --maxFont: 115px;
+    --scaler: 4.5vw;
+    font-size: clamp(var(--minFont), var(--scaler), var(--maxFont));
+}
+
+#intro-p {
+    width: 70%;
+}
+
+
+/* -------------------------- Featured Work Section -------------------------- */
 
 #fWork1 {
     display: flex;
@@ -301,7 +349,7 @@ nav {
 #content3:hover,
 #content4:hover {
     transform: scale(1, 1.05);
-    flex: 2;
+    flex: 3;
 
 }
 
@@ -315,7 +363,7 @@ nav {
     justify-content: center;
     align-items: flex-start;
     height: 100%;
-    width: 70%;
+    width: 90%;
     padding: 2rem;
     row-gap: 1rem;
 }
