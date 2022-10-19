@@ -1,5 +1,5 @@
 
-let switchMode = document.querySelector('input');
+const switchMode = document.querySelector('input');
 
 switchMode.addEventListener('click', lightMode);
 
