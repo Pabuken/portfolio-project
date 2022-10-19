@@ -37,6 +37,16 @@ body {
     background-color: #181818;
 }
 
+main {
+    width: 100vw;
+    height: 100vh;
+}
+
+.light-mode {
+    background-color: white;
+    --whitetext: #181818;
+  }
+
 
 /* -------------------------- Text CSS -------------------------- */
 
@@ -60,13 +70,17 @@ h1 {
     font-size: 6rem;
 }
 
+h3 {
+    font-size: 3rem;
+}
+
 a {
     font-family: Heebo, Arial, Helvetica, sans-serif;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 
-/* HEADER */
+/* -------------------------- Header Section -------------------------- */
 
 header {
     width: 100vw;
@@ -74,9 +88,6 @@ header {
     min-height: 5rem;
     transition: all 100ms ease-out;
 }
-
-
-/* -------------------------- Header Section -------------------------- */
 
 nav {
     display: flex;
@@ -186,19 +197,6 @@ nav {
     border-radius: 50%;
   }
 
-  .light-mode {
-    background-color: white;
-    --whitetext: #181818;
-  }
-
-
-/* MAIN */
-
-main {
-    width: 100vw;
-    height: 100vh;
-}
-
 
 /* -------------------------- Hero Section -------------------------- */
 
@@ -233,7 +231,41 @@ main {
 }
 
 
-#space {
+/* -------------------------- Hero Section -------------------------- */
+
+#fWork1 {
+    display: grid;
+    grid-template: repeat(6, 1fr) / repeat(12, 1fr);
+    gap: 30px;
     width: 100%;
-    height: 300vh;
+    height: 60vh;
+    padding: 2rem 4rem;
+}
+
+#content1 {
+    background-color: #e0e0e0;
+    grid-area: 1 / 1 / 7 / span 4;
+}
+
+#content2 {
+    background-color: #e0e0e0;
+    grid-area: 1 / 5 / 5 / span 8;
+}
+
+#content3 {
+    background-color: #e0e0e0;
+    grid-area: 5 / 5 / 7 / span 8;
+}
+
+.rounded-container {
+    border-radius: 20px;
+}
+
+.project-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
 }
