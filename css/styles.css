@@ -9,14 +9,15 @@
 :root {
     /* ___ Variables ___ */
     --nav-height: 10vh;
+    --containerPadding: 4rem 4rem;
 
     /* ___ Colors ___ */
     --mainGreen: #5fbd68;
     --grayText: #181818;
     --grayBG: #181818;
     --opaqueGrayBG: #181818cb;
-    --lightGray: #E3E3E3;
-    --opaqueLightGray: #e3e3e3de;
+    --lightGray: #d7d7d7;
+    --opaqueLightGray: #eeeeeede;
     --whitetext: white;
 }
 
@@ -214,6 +215,7 @@ nav {
   }
   
   .slider.round:before {
+    background-color: var(--grayBG);
     border-radius: 50%;
   }
 
@@ -221,13 +223,13 @@ nav {
 /* -------------------------- Hero Section -------------------------- */
 
 #hero {
-
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 70vh;
-    padding: 6rem 4rem;
+    height: 90vh;
+    /* padding: 4rem 4rem; */
+    padding: var(--containerPadding);
 }
 
 
@@ -254,37 +256,25 @@ nav {
 /* -------------------------- Introduction Section -------------------------- */
 
 #intro {
-    display: flex;
-    padding: 2rem 10rem;
-    height: 30vh;
-    --w: 100vw;
-    width: var(--w);
+    padding: var(--containerPadding);
+    height: fit-content;
+    width: 100vw;
 }
 
-.intro-flex {
+#intro-flex {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    column-gap: 4rem;
-    height: 100%;
+    gap: 3rem;
+    width: 100%;
 }
 
-#bestAt {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    row-gap: .5rem;
-    width: 30%;
-    height: 100%;
-}
 
-#bestAt h2 {
+#intro-flex h2 {
     white-space: nowrap;
-    --minFont: 60px;
-    --maxFont: 115px;
-    --scaler: 4.5vw;
-    font-size: clamp(var(--minFont), var(--scaler), var(--maxFont));
+    font-size: 1.8rem;
+    color: var(--lightGray);
 }
 
 #intro-p {
@@ -297,9 +287,10 @@ nav {
 #fWork1 {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
     height: 60vh;
-    padding: 2rem 4rem;
+    padding: var(--containerPadding);
     gap: 2rem;
 }
 
@@ -307,12 +298,15 @@ nav {
     display: flex;
     gap: 2rem;
     height: 100%;
+    width: 100%;
+    max-width: 1800px;
 }
 
 
 .content-container {
     background-color: var(--grayBG);
     height: 100%;
+    width: 100%;
     transition: all 500ms ease;
 }
 
@@ -326,21 +320,21 @@ nav {
 #content2 {
     background-image: url("../images/green-header.jpg");
     background-size: cover;
-    background-blend-mode: overlay;
+    box-shadow: inset 0 0 0 2000px var(--opaqueGrayBG);
     flex: 1;
 }
 
 #content3 {
     background-image: url("../images/green-header.jpg");
     background-size: cover;
-    background-blend-mode: overlay;
+    box-shadow: inset 0 0 0 2000px var(--opaqueGrayBG);
     flex: 1;
 }
 
 #content4 {
     background-image: url("../images/green-header.jpg");
     background-size: cover;
-    background-blend-mode: overlay;
+    box-shadow: inset 0 0 0 2000px var(--opaqueGrayBG);
     flex: 1;
 }
 
