@@ -1,20 +1,22 @@
 // _____________________ Show/Hide Navbar on Scroll _____________________
 
 const heroImage = document.getElementById('hero-image')
-let startingWidth = 80;
-let startingHeight = 80;
+let startingWidth = 100;
+let startingHeight = 100;
 
 
 window.addEventListener('wheel', (e) => {
 
-        if (e.deltaY < 0 && startingWidth > 80) {
-            startingWidth -= 3;
-            startingHeight -= 3;
-        } else if (e.deltaY > 0) {
-            startingWidth += 3;
-            startingHeight += 3;
+        if (e.deltaY < 0 && startingWidth < 100) {
+            startingWidth += 4;
+            startingHeight += 4;
+        } else if (e.deltaY > 0 && startingWidth > 80) {
+            startingWidth -= 4;
+            startingHeight -= 4;
         };
 
+    console.log(startingHeight)
+    console.log(startingWidth)
     heroImage.style.width = `${startingWidth}%`
     heroImage.style.height = `${startingHeight}%`
 })
