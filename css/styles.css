@@ -110,7 +110,9 @@ header {
     width: 100vw;
     height: var(--nav-height);
     min-height: 5rem;
+    margin-top: -10.5vh;
     transition: all 100ms ease-out;
+    animation: 2s ease-out 2s 1 forwards lowerIn;
 }
 
 nav {
@@ -135,6 +137,20 @@ nav {
     max-height: 100px;
     min-height: 70px;
     /* margin-right: 4rem; */
+    opacity: 0;
+    animation: 1s ease-out 2s 1 forwards lowerIn;
+}
+
+@keyframes lowerIn {
+    from {
+        margin-top: -10.5vh;
+        opacity: 0;
+    }
+
+    to {
+        margin-top: 0;
+        opacity: 1;
+    }
 }
 
 #logo img {
@@ -148,6 +164,8 @@ nav {
     display: flex;
     align-self: center;
     column-gap: 30px;
+    opacity: 0;
+    animation: 1s ease-out 2.5s 1 forwards lowerIn;
 }
 
 #navigation a {
@@ -163,6 +181,8 @@ nav {
     justify-self: right;
     width: 60px;
     height: 34px;
+    opacity: 0;
+    animation: 1s ease-out 3s 1 forwards lowerIn;
   }
   
   .switch input {
