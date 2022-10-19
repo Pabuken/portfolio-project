@@ -68,7 +68,7 @@ header {
     width: 100vw;
     height: var(--nav-height);
     min-height: 5rem;
-    transition: all 1s ease-out;
+    transition: all 100ms ease-out;
 }
 
 
@@ -76,14 +76,11 @@ header {
 
 nav {
     display: flex;
-    /* position: fixed; */
-    justify-content: space-between;
     align-items: center;
     width: 100%;
     height: var(--nav-height);
     min-height: 5rem;
-    padding: 4rem 4rem 0 4rem;
-
+    padding: 6rem 4rem;
 }
 
 .sticky {
@@ -97,6 +94,7 @@ nav {
     height: 100%;
     max-height: 100px;
     min-height: 70px;
+    margin-right: 4rem;
 }
 
 #logo img {
@@ -128,29 +126,34 @@ main {
 /* -------------------------- Hero Section -------------------------- */
 
 #hero {
-    display: grid;
-    grid-template: 1, 1fr;
-    justify-items: center;
+
+    display: flex;
+    justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100vh;
-}
-
-#hero h1 {
-    grid-column: 1 / 1;
-    grid-row: 1 / 1;
-    z-index: 2;
+    height: 60vh;
+    padding: 2rem 4rem;
 }
 
 
 #hero-image {
-    grid-column: 1 / 1;
-    grid-row: 1 / 1;
-    width: 80%;
-    height: 80%;
-    border-radius: 0;
-    scale: 1;
+    background-image: url("../images/green-header.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    
+    padding: 4rem;
+}
 
+#hero-image h1 {
+
+    font-size: 6rem;
+    white-space: nowrap;
 }
 
 
