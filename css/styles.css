@@ -241,29 +241,55 @@ nav {
 /* -------------------------- Hero Section -------------------------- */
 
 #fWork1 {
-    display: grid;
-    grid-template: repeat(6, 1fr) / repeat(4, 1fr);
-    gap: 30px;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 60vh;
     padding: 2rem 4rem;
+    gap: 2rem;
 }
 
-#content1 {
+.content-row {
+    display: grid;
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+    gap: 2rem;
+    transition: all 500ms ease;
+}
+
+.content-container {
     background-color: #e0e0e0;
-    grid-area: 1 / 1 / 7 / 2;
+}
+
+.content-container:hover {
+    background-color: #e0e0e0;
+    grid-column: span 2;
+    transition: all 500ms ease;
+}
+
+
+#content1 {
+    background-image: url("../images/green-header.jpg");
+    background-size: cover;
+    background-blend-mode: overlay;
 }
 
 #content2 {
-    /* background-color: #e0e0e0; */
     background-image: url("../images/green-header.jpg");
     background-size: cover;
-    grid-area: 1 / 2 / 5 / span 3;
+    background-blend-mode: overlay;
 }
 
 #content3 {
-    background-color: #e0e0e0;
-    grid-area: 5 / 2 / 7 / span 3;
+    background-image: url("../images/green-header.jpg");
+    background-size: cover;
+    background-blend-mode: overlay;
+}
+
+#content4 {
+    background-image: url("../images/green-header.jpg");
+    background-size: cover;
+    background-blend-mode: overlay;
 }
 
 .rounded-container {
