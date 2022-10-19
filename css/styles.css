@@ -348,6 +348,7 @@ nav {
 #content2:hover,
 #content3:hover,
 #content4:hover {
+    cursor: pointer;
     transform: scale(1, 1.05);
     flex: 3;
 
