@@ -1,32 +1,40 @@
 // _____________________ Show/Hide Navbar on Scroll _____________________
 
 const heroImage = document.getElementById('hero-image')
-let startingWidth = 100;
-let startingHeight = 100;
+
+let header = document.querySelector('header');
+let heroScale = 1;
+let heroCorners = 0;
 
 
 window.addEventListener('wheel', (e) => {
 
-        if (e.deltaY < 0 && startingWidth < 100) {
-            startingWidth += 4;
-            startingHeight += 4;
-        } else if (e.deltaY > 0 && startingWidth > 80) {
-            startingWidth -= 4;
-            startingHeight -= 4;
-        };
+    if (e.deltaY < 0 && heroScale < 1) {
+        heroScale += 0.05;
+        heroCorners -= 6;
+    } else if (e.deltaY > 0 && heroScale > 0.7) {
+        heroScale -= 0.05;
+        heroCorners += 6;
+    };
 
-    console.log(startingHeight)
-    console.log(startingWidth)
-    heroImage.style.width = `${startingWidth}%`
-    heroImage.style.height = `${startingHeight}%`
+    heroImage.style.scale = `${heroScale}`
+    heroImage.style.borderRadius = `${heroCorners}px`
+
 })
 
 window.addEventListener('scroll', () => {
 
-    if (window.scrollY >= window.innerHeight/4) {
-        document.querySelector('header').style.marginTop = '0'
+    if (window.scrollY >= window.innerHeight/3) {
+        header.style.marginTop = '0'
+        header.style.marginBottom = '5vh'
+        header.style.visibility = ''
     } else {
-        document.querySelector('header').style.marginTop = ''
+        header.style.marginTop = ''
+        header.style.marginBottom = ''
+        header.style.visibility = 'hidden'
     }
 
 })
+
+
+

@@ -19,6 +19,8 @@
 }
 
 html {
+scroll-behavior: smooth;
+
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
 
@@ -63,7 +65,7 @@ header {
     height: var(--nav-height);
     min-height: 5rem;
     margin-top: -10vh;
-    transition: margin-top 500ms ease-out;
+    transition: all 1s ease-out;
 }
 
 
@@ -78,6 +80,7 @@ nav {
     height: var(--nav-height);
     min-height: 5rem;
     padding: 4rem 4rem 0 4rem;
+
 }
 
 .sticky {
@@ -123,10 +126,11 @@ main {
 
 #hero {
     display: grid;
-    justify-items: center;
+    position: fixed;
+    justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 150vh;
+    height: 100vh;
     transition: all 500ms ease-out;
 }
 
@@ -134,13 +138,14 @@ main {
 
     width: 100%;
     height: 100%;
-    border-radius: 30px;
-    transition: all 500ms ease-out;
+    border-radius: 0;
+    scale: 1;
+    transform-origin: top center;
+    transition: all 500ms linear;
 }
 
 
 #space {
     width: 100%;
-    height: 1500px;
-
+    height: 300vh;
 }
