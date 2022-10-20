@@ -16,6 +16,7 @@
 
     /* ___ Colors ___ */
     --mainGreen: #5fbd68;
+    --opaqueMainGreen: #5fbd68d0;
     --grayText: #181818;
     --grayBG: #1e1e1e;
     --darkShadowBG: #11111134;
@@ -459,7 +460,7 @@ nav {
     align-items: center;
     width: 100%;
     height: 60vh;
-    padding: var(--containerPadding);
+    padding: 3.5rem 0;
     gap: 2rem;
 }
 
@@ -503,7 +504,6 @@ nav {
 #content4 {
     background-image: url("../images/green-header.jpg");
     background-size: cover;
-    box-shadow: inset 0 0 0 2000px var(--opaqueGrayBG);
     flex: 1;
 }
 
@@ -514,10 +514,15 @@ nav {
     cursor: pointer;
     transform: scale(1, 1.05);
     flex: 3;
+    box-shadow: inset 0 0 0 2000px var(--opaqueMainGreen);
 }
 
-.rounded-container {
-    border-radius: 20px;
+.rounded-container-left {
+    border-radius: 0 20px 20px 0px;
+}
+
+.rounded-container-right {
+    border-radius: 20px 0 0 20px;
 }
 
 .project-info {
@@ -529,16 +534,22 @@ nav {
     width: 90%;
     padding: 2rem;
     row-gap: 1rem;
+    opacity: 0;
+    transition: opacity 500ms ease-out;
 }
 
 .project-info p {
     width: 90%;
     flex: 0;
-    color: var(--whitetext);
+    color: var(--grayText);
+}
+
+.project-info:hover {
+    opacity: 1;
 }
 
 .project-header {
-    color: var(--whitetext);
+    color: var(--grayText);
 }
 
 /*#endregion*/
