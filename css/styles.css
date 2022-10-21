@@ -553,3 +553,52 @@ nav {
 }
 
 /*#endregion*/
+
+
+/*#region __________ Footer Section */
+
+footer {
+    width: 100%;
+    height: auto;
+    padding: var(--containerPadding);
+}
+
+hr.rounded {
+    border:none;
+    border-top: 3px solid #bbb;
+    border-radius: 5px;
+    width: 80%;
+}
+
+#footer-content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--innerPadding);
+}
+
+#footer-logo {
+    width: 5%;
+    height: auto;
+    max-width: 80px;
+    min-width: 50px;
+}
+
+#footer-logo img {
+    width: 100%;
+    height: 100%;
+    max-width: inherit;
+    min-width: inherit;
+}
+
+#footer-info a {
+    color: var(--mainGreen);
+}
+
+#footer-icons {
+    display: flex;
+    justify-content: center;
+}
+
+/* #endregion */
