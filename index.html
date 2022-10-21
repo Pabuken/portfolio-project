@@ -171,34 +171,44 @@
 
         <section id="contact-form">
 
+            <div id="form-info">
+                <h3>Contact Me</h3>
+                <p>Want to get in touch? Fill out the form and ill respond as soon as possible.</p>
+                <ul id="contact-info">
+                    <li><span>Email II </span> placeholderemail@email.com</li>
+                    <li><span>Phone II </span> +1 (234) 567 - 8910</li>
+                    <li><span>Github II </span> github.io/linktomygh</li>
+                </ul>
+            </div>
+
             <form action="">
 
                 <div id="item1" class="form-item">
                     <label for="lname">First Name</label>
                     <br>
-                    <input type="text" id="lname">
+                    <input type="text" id="lname" class="form-field" required>
                 </div>
 
                 <div id="item2" class="form-item">
                     <label for="fname">Last Name</label>
                     <br>
-                    <input type="text" id="fname">
+                    <input type="text" id="fname" class="form-field" required>
                 </div>
 
                 <div id="item3" class="form-item">
                     <label for="form-email">Email Address</label>
                     <br>
-                    <input type="text" id="form-email">
+                    <input type="text" id="form-email" class="form-field" required>
                 </div>
                 
                 <div id="item4" class="form-item">
                     <label for="form-message">Message</label>
                     <br>
-                    <textarea name="message"></textarea>
+                    <textarea name="message" class="form-field" required>Write your message here</textarea>
                 </div>
 
                 <div id="item5" class="form-item">
-                    <input type="submit">
+                    <input type="submit" class="lg-prim-btn">
                 </div>
             </form>
 
