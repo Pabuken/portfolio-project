@@ -164,15 +164,18 @@ a {
 .card-wrap-outer {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    flex: 1;
+    justify-content: space-between;
+    justify-self: center;
     gap: 2rem;
     padding: var(--innerPadding);
+    max-width: 1800px;
 }
 
 .card-wrap-inner {
     display: flex;
     flex-flow: row wrap;
-    flex: 0 0 30%;
+    flex: 1 1 30%;
     padding: 4rem 3rem;
     border: 2px solid var(--cardBorder);
     border-radius: 20px;
@@ -405,6 +408,9 @@ nav {
 /*#region __________ Introduction Section */
 
 #intro {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
     padding: var(--containerPadding);
     width: 100vw;
 }
@@ -460,7 +466,7 @@ nav {
     align-items: center;
     width: 100%;
     height: 60vh;
-    padding: 3.5rem 0;
+    padding: var(--containerPadding);
     gap: 2rem;
 }
 
@@ -471,7 +477,6 @@ nav {
     width: 100%;
     max-width: 1800px;
 }
-
 
 .content-container {
     background-color: var(--grayBG);
@@ -517,12 +522,8 @@ nav {
     box-shadow: inset 0 0 0 2000px var(--opaqueMainGreen);
 }
 
-.rounded-container-left {
-    border-radius: 0 20px 20px 0px;
-}
-
-.rounded-container-right {
-    border-radius: 20px 0 0 20px;
+.rounded-container {
+    border-radius: 20px;
 }
 
 .project-info {
