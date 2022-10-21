@@ -1,22 +1,30 @@
+/* #region _________ Font Imports */
 
-/* -------------------------- Font Imports -------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Heebo:wght@100;200;300;400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+/* #endregion */
 
 
-/* -------------------------- Global CSS -------------------------- */
+/*#region __________ Global CSS & Variables */
 
 :root {
+    
     /* ___ Variables ___ */
     --nav-height: 10vh;
+    --containerPadding: 3.5rem;
+    --innerPadding: 3.5rem 0;
 
     /* ___ Colors ___ */
     --mainGreen: #5fbd68;
+    --opaqueMainGreen: #5fbd68d0;
     --grayText: #181818;
-    --grayBG: #181818;
+    --grayBG: #1e1e1e;
+    --darkShadowBG: #11111134;
+    --lightShadowBG: #4444440e;
     --opaqueGrayBG: #181818cb;
-    --lightGray: #E3E3E3;
-    --opaqueLightGray: #e3e3e3de;
+    --lightGray: #aeaeae;
+    --opaqueLightGray: #eeeeeede;
+    --cardBorder: #8e8e8e22;
     --whitetext: white;
 }
 
@@ -40,12 +48,10 @@ html::-webkit-scrollbar {
 
 body {
     background-color: var(--grayBG);
-    transition: all 500ms ease-out;
 }
 
 main {
     width: 100vw;
-    height: 100vh;
 }
 
 .light-mode {
@@ -53,29 +59,30 @@ main {
     --whitetext: var(--grayText);
     --grayBG: var(--lightGray);
     --opaqueGrayBG: var(--opaqueLightGray);
+    --darkShadowBG: #9e9e9e0d;
+    --lightShadowBG: #e9e9e956;
+    --cardBorder: #f3f3f3;
   }
 
+/*#endregion*/
 
-/* -------------------------- Text CSS -------------------------- */
 
-h1, 
-h2, 
-h3, 
-h4 {
+/*#region __________ Text CSS */
+
+h1, h2, h3, h4 {
     font-family: Heebo, Arial, Helvetica, sans-serif;
     font-weight: 700;
     color: var(--whitetext);
 }
 
-h5,
-h6 {
+h5, h6 {
     font-family: Heebo, Arial, Helvetica, sans-serif;
-    font-weight: 300;
+    font-weight: 500;
     color: var(--whitetext);
 }
 
 h1 {
-    font-size: 6rem;
+    font-size: 5.5rem;
 }
 
 h2 {
@@ -84,14 +91,37 @@ h2 {
 
 h3 {
     font-size: 3rem;
+
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+h5 {
+    font-size: 1.3rem;
+    color: var(--lightGray);
 }
 
 p {
-    font-family: Lora, Georgia, 'Times New Roman', Times, serif;
+    /* font-family: Lora, Georgia, 'Times New Roman', Times, serif; */
+    font-family: Heebo, Arial, Helvetica, sans-serif;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 400;
+
     line-height: 1.4rem;
     color: var(--whitetext);
+}
+
+ul {
+    color: var(--whitetext);
+}
+
+li {
+    font-family: Heebo, Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: .01rem;
 }
 
 a {
@@ -99,14 +129,103 @@ a {
     font-weight: 500;
 }
 
+/*#endregion*/
 
-/* -------------------------- Header Section -------------------------- */
+
+/* #region _________ Resused Classes */
+
+.arrow {
+    border: solid var(--lightGray);
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 5px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.card-wrap-outer {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1;
+    justify-content: space-between;
+    justify-self: center;
+    gap: 2rem;
+    padding: var(--innerPadding);
+    max-width: 1800px;
+}
+
+.card-wrap-inner {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 1 30%;
+    padding: 4rem 3rem;
+    border: 2px solid var(--cardBorder);
+    border-radius: 20px;
+    box-shadow: 4px 8px 4px var(--darkShadowBG), -6px -2px 8px var(--lightShadowBG);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    row-gap: 2rem;
+}
+
+.flex-item {
+    padding-bottom: .8rem;
+}
+
+.card-header {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.5rem;
+    text-decoration: none;
+    position: relative;
+    color: var(--whitetext);
+    transition: all 200ms ease-out;
+}
+
+/* #endregion */
+
+
+/*#region __________ Header Section */
+
+@keyframes lowerIn {
+    from {
+        margin-top: -10.5vh;
+        opacity: 0;
+    }
+
+    to {
+        margin-top: 0;
+        opacity: 1;
+    }
+}
 
 header {
     width: 100vw;
     height: var(--nav-height);
     min-height: 5rem;
-    transition: all 100ms ease-out;
+    margin-top: -10.5vh;
+    animation: 2s ease-out 3s 1 forwards lowerIn;
 }
 
 nav {
@@ -131,7 +250,10 @@ nav {
     max-height: 100px;
     min-height: 70px;
     /* margin-right: 4rem; */
+    opacity: 0;
+    animation: 1s ease-in-out 3s 1 forwards lowerIn;
 }
+
 
 #logo img {
     color: var(--whitetext);
@@ -144,6 +266,8 @@ nav {
     display: flex;
     align-self: center;
     column-gap: 30px;
+    opacity: 0;
+    animation: 1s ease-out 3.5s 1 forwards lowerIn;
 }
 
 #navigation a {
@@ -153,23 +277,22 @@ nav {
     color: var(--mainGreen);
 }
 
-/* The switch - the box around the slider */
 .switch {
     position: relative;
     display: inline-block;
     justify-self: right;
     width: 60px;
     height: 34px;
+    opacity: 0;
+    animation: 1s ease-out 4s 1 forwards lowerIn;
   }
   
-  /* Hide default HTML checkbox */
   .switch input {
     opacity: 0;
     width: 0;
     height: 0;
   }
   
-  /* The slider */
   .slider {
     position: absolute;
     cursor: pointer;
@@ -208,26 +331,41 @@ nav {
     transform: translateX(26px);
   }
   
-  /* Rounded sliders */
   .slider.round {
     border-radius: 34px;
   }
   
   .slider.round:before {
+
     border-radius: 50%;
   }
 
+  /*#endregion*/
 
-/* -------------------------- Hero Section -------------------------- */
+
+/*#region __________ Hero Section */
+
+@keyframes titleFade {
+    from {
+        transform: translateY(-5px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+
+    }
+    
+}
 
 #hero {
-
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 70vh;
-    padding: 6rem 4rem;
+    height: 90vh;
+    /* padding: 4rem 4rem; */
+    padding: var(--containerPadding);
 }
 
 
@@ -247,59 +385,88 @@ nav {
 #hero-image h1 {
     font-size: 6rem;
     color: white;
+    opacity: 0;
+    animation: 2s ease-out 1s 1 forwards titleFade;
 }
 
 
 
-/* -------------------------- Introduction Section -------------------------- */
+
+#together {
+    font-family: 'DM Serif Display', serif;
+    color: var(--mainGreen);
+    font-weight: 500;
+    transform: translateY(-5px);
+    opacity: 0;
+    animation: 2s ease-out 2s 1 forwards titleFade;
+}
+
+
+/*#endregion*/
+
+
+/*#region __________ Introduction Section */
 
 #intro {
     display: flex;
-    padding: 2rem 10rem;
-    height: 30vh;
-    --w: 100vw;
-    width: var(--w);
-}
-
-.intro-flex {
-    display: flex;
-    justify-content: center;
+    flex-flow: column nowrap;
     align-items: center;
-    column-gap: 4rem;
-    height: 100%;
+    padding: var(--containerPadding);
+    width: 100vw;
 }
 
-#bestAt {
+#intro-header {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
-    row-gap: .5rem;
-    width: 30%;
-    height: 100%;
+    padding: var(--innerPadding);
 }
 
-#bestAt h2 {
-    white-space: nowrap;
-    --minFont: 60px;
-    --maxFont: 115px;
-    --scaler: 4.5vw;
-    font-size: clamp(var(--minFont), var(--scaler), var(--maxFont));
+#intro-header-info {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 60%;
 }
 
-#intro-p {
-    width: 70%;
+#intro-header-info p {
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+#intro-header-info span {
+    font-family: 'DM Serif Display', serif;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--mainGreen);
+}
+
+.tools-list {
+    display: flex;
+    flex-flow: row wrap;
+    gap: .5rem;
 }
 
 
-/* -------------------------- Featured Work Section -------------------------- */
+.tools-list > li {
+    background-color: var(--mainGreen);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+}
+
+
+/*#endregion*/
+
+
+/*#region __________ Featured Work Section */
 
 #fWork1 {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
     height: 60vh;
-    padding: 2rem 4rem;
+    padding: var(--containerPadding);
     gap: 2rem;
 }
 
@@ -307,12 +474,14 @@ nav {
     display: flex;
     gap: 2rem;
     height: 100%;
+    width: 100%;
+    max-width: 1800px;
 }
-
 
 .content-container {
     background-color: var(--grayBG);
     height: 100%;
+    width: 100%;
     transition: all 500ms ease;
 }
 
@@ -326,21 +495,20 @@ nav {
 #content2 {
     background-image: url("../images/green-header.jpg");
     background-size: cover;
-    background-blend-mode: overlay;
+    box-shadow: inset 0 0 0 2000px var(--opaqueGrayBG);
     flex: 1;
 }
 
 #content3 {
     background-image: url("../images/green-header.jpg");
     background-size: cover;
-    background-blend-mode: overlay;
+    box-shadow: inset 0 0 0 2000px var(--opaqueGrayBG);
     flex: 1;
 }
 
 #content4 {
     background-image: url("../images/green-header.jpg");
     background-size: cover;
-    background-blend-mode: overlay;
     flex: 1;
 }
 
@@ -351,7 +519,7 @@ nav {
     cursor: pointer;
     transform: scale(1, 1.05);
     flex: 3;
-
+    box-shadow: inset 0 0 0 2000px var(--opaqueMainGreen);
 }
 
 .rounded-container {
@@ -367,14 +535,71 @@ nav {
     width: 90%;
     padding: 2rem;
     row-gap: 1rem;
+    opacity: 0;
+    transition: opacity 500ms ease-out;
 }
 
 .project-info p {
     width: 90%;
     flex: 0;
-    color: var(--whitetext);
+    color: var(--grayText);
+}
+
+.project-info:hover {
+    opacity: 1;
 }
 
 .project-header {
-    color: var(--whitetext);
+    color: var(--grayText);
 }
+
+/*#endregion*/
+
+
+/*#region __________ Footer Section */
+
+footer {
+    width: 100%;
+    height: auto;
+    padding: var(--containerPadding);
+}
+
+hr.rounded {
+    border:none;
+    border-top: 3px solid #bbb;
+    border-radius: 5px;
+    width: 80%;
+}
+
+#footer-content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--innerPadding);
+}
+
+#footer-logo {
+    width: 5%;
+    height: auto;
+    max-width: 80px;
+    min-width: 50px;
+}
+
+#footer-logo img {
+    width: 100%;
+    height: 100%;
+    max-width: inherit;
+    min-width: inherit;
+}
+
+#footer-info a {
+    color: var(--mainGreen);
+}
+
+#footer-icons {
+    display: flex;
+    justify-content: center;
+}
+
+/* #endregion */
